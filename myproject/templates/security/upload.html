@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Hoş geldiniz, {{ user.email }}</h2>
+<a href="{% url 'account_logout' %}">Çıkış Yap</a>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Dosya Yükle</button>
+</form>
+{% endblock %} 
